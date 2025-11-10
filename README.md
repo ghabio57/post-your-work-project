@@ -72,3 +72,7 @@ You can find it here: https://github.com/udacity/post-your-work-project
 ## Date created
 
 Created on November 11, 2025
+
+## Disclaimer
+
+Data and project were provided by [Udacity](https://www.udacity.com/).
