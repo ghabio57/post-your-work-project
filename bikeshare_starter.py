@@ -6,6 +6,8 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
+SEPARATOR = "-" * 40
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -25,7 +27,7 @@ def get_filters():
     # get user input for day of week (all, monday, tuesday, ... sunday)
 
 
-    print('-'*40)
+    print(SEPARATOR)
     return city, month, day
 
 
@@ -59,9 +61,7 @@ def time_stats(df):
 
     # display the most common start hour
 
-
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print_duration(start_time)
 
 
 def station_stats(df):
@@ -79,8 +79,7 @@ def station_stats(df):
     # display most frequent combination of start station and end station trip
 
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print_duration(start_time)
 
 
 def trip_duration_stats(df):
@@ -95,8 +94,7 @@ def trip_duration_stats(df):
     # display mean travel time
 
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    print_duration(start_time)
 
 
 def user_stats(df):
@@ -114,8 +112,13 @@ def user_stats(df):
     # Display earliest, most recent, and most common year of birth
 
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+
+    print_duration(start_time)
+
+
+def print_duration(start_time):
+    print(f"\nThis took {time.time() - start_time:.2f} seconds.")
+    print(SEPARATOR)
 
 
 def main():
